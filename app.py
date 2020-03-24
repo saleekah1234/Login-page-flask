@@ -7,16 +7,13 @@ def welcome():
 
 @app.route('/signup',methods=['POST'])
 def profile():
-    user=request.form['name']
-    det1=request.form['college']
-    det2=request.form['branch']
-    return render_template('profile.html')
+    dict={'name':request.form['name'],'college':request.form['college']}
+    return render_template('profile.html',dict=dict)
 
 @app.route('/login',methods=['POST'])
 def login():
-    user=request.form['nm']
-    opstring='hey',+ user +'welcome to lfh'
-    return opstring
+    dict={'name':request.form['nm']}
+    return render_template('index.html',dict=dict)
      
 
 #to goto registartion page
